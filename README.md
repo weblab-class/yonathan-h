@@ -1,18 +1,19 @@
-Waypoint is a location-based application that features a "unexplored map" mechanic. Users can reveal the map by physically moving through the world, discover and create local quests, and share photo proof of their completions.
+**Waypoint** is a location-based application that features a "unexplored map" mechanic. Users can reveal the map by physically moving through the world, discover and create local quests, and share photo proof of their completions.
 
-Features
-Real-time GPS tracking that reveals the map as you move.
+**Features:**
 
-Discover and accept location-specific challenges within a 0.3km radius.
+**Real-time GPS** tracking that reveals the map as you move.
 
-View a history of completed quests and photo proofs from the community.
+Discover and accept location-specific challenges within a **0.3km radius**.
 
-Track personal quest history and manage your account via Google Auth.
+View a history of completed quests and photo proofs from the **community**.
 
-Frontend: React.js, Mapbox GL JS, Turf.js.
+Track **personal quest history** and manage your account via Google Auth.
 
-Backend: Node.js, Express.
+**Frontend**: React.js, Mapbox GL JS, Turf.js.
 
-Database: MongoDB.
+**Backend**: Node.js, Express.
 
-Authentication: Firebase (Google Auth).
+**Database**: MongoDB.
+
+**Authentication**: Firebase (Google Auth).
