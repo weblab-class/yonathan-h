@@ -33,6 +33,16 @@ export default function App() {
     } catch (error) { console.error("Login failed:", error); }
   };
 
+  const handleLogout = async () => {
+    try {
+      await auth.signOut();
+      setUser(null);
+      setView('map');
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
+
   // data fetching
   useEffect(() => {
     if (!user) return;
@@ -297,7 +307,7 @@ export default function App() {
               <img src={user.photoURL} alt="pfp" className="profile-pfp" />
               <div className="profile-header-info">
                 <h2>{user.displayName}</h2>
-                <button onClick={() => auth.signOut()} className="logout-btn-profile">Logout</button>
+                <button onClick={handleLogout} className="logout-btn-profile">Logout</button>
               </div>
             </div>
             <h3>Post History</h3>
