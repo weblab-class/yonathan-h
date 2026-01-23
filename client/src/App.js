@@ -37,8 +37,8 @@ export default function App() {
   useEffect(() => {
     if (!user) return;
     Promise.all([
-      fetch('http://localhost:5000/api/quests').then(res => res.json()),
-      fetch('http://localhost:5000/api/posts').then(res => res.json())
+      fetch('https://waypoint-backend-4jop.onrender.com/api/quests').then(res => res.json()),
+      fetch('https://waypoint-backend-4jop.onrender.com/api/posts').then(res => res.json())
     ])
     .then(([quests, posts]) => setData({ quests, posts }))
     .catch(err => console.error("Data sync failed:", err));
@@ -145,7 +145,7 @@ export default function App() {
       date: new Date().toLocaleDateString()
     };
     try {
-      const res = await fetch('http://localhost:5000/api/posts', {
+      const res = await fetch('https://waypoint-backend-4jop.onrender.com/api/posts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(postData)
@@ -257,7 +257,7 @@ export default function App() {
                           location: { type: "Point", coordinates: form.coords },
                           createdBy: user.displayName
                         };
-                        const res = await fetch('http://localhost:5000/api/quests', {
+                        const res = await fetch('https://waypoint-backend-4jop.onrender.com/api/quests', {
                           method: 'POST', headers: { 'Content-Type': 'application/json' },
                           body: JSON.stringify(newQuestData)
                         });
