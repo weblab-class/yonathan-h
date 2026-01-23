@@ -4,11 +4,11 @@ const { MongoClient } = require('mongodb');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: 'https://waypointsite.onrender.com' }));
 // for larger images
 app.use(express.json({ limit: '50mb' }));
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
 
