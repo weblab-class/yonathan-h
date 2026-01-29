@@ -4,7 +4,7 @@
 
 **Real-time GPS** tracking that reveals the map as you move.
 
-Discover and accept location-specific challenges within a **0.3km radius**.
+Discover and accept location-specific challenges within a **0.1km radius**.
 
 View a history of completed quests and photo proofs from the **community**.
 
