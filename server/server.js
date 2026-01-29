@@ -196,7 +196,7 @@ async function run() {
     
             // ignore updates faster than every 2 seconds
             if (user.lastDistanceUpdate && (now - user.lastDistanceUpdate < 2000)) {
-                return res.json(user); // Return existing data without updating
+                return res.json(user); // existing data without updating
             }
 
             const updatedUser = await users.findOneAndUpdate(
@@ -205,6 +205,14 @@ async function run() {
                 { returnDocument: 'after' }
             );
             res.json(updatedUser);
+        });
+
+        const path = require('path');
+
+        app.use(express.static(path.join(__dirname, '../client/build')));
+
+        app.get('*', (req, res) => {
+            res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
         });
 
         app.listen(PORT, () => console.log(`Server on port ${PORT}`));
