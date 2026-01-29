@@ -1,4 +1,5 @@
-require('dotenv').config({ path: '../client/.env' });
+const path = require('path');
+require('dotenv').config();
 const express = require('express');
 const { MongoClient, ObjectId } = require('mongodb');
 const cors = require('cors');
@@ -206,8 +207,6 @@ async function run() {
             );
             res.json(updatedUser);
         });
-
-        const path = require('path');
 
         app.use(express.static(path.join(__dirname, '../client/build')));
 
